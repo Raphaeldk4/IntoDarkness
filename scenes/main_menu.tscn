@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqr70780u43kw"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_rj6dg"]
-[ext_resource type="Texture2D" uid="uid://skae4ybpuhdb" path="res://sprites/mainMenu/Capture_decran_2024-10-02_102921.png" id="1_yo1d1"]
 [ext_resource type="PackedScene" uid="uid://by7bcu6bqms6q" path="res://scenes/mainMenuHud.tscn" id="2_5cd0r"]
 [ext_resource type="PackedScene" uid="uid://bgyrtrehlo828" path="res://scenes/settings.tscn" id="4_3m4oy"]
+[ext_resource type="Texture2D" uid="uid://skae4ybpuhdb" path="res://sprites/mainMenu/Capture_decran_2024-10-02_102921.png" id="5_dnh3l"]
 [ext_resource type="PackedScene" uid="uid://2xlwrhij17y" path="res://scenes/sound.tscn" id="5_rb8et"]
 
 [sub_resource type="GDScript" id="GDScript_f0wfs"]
@@ -26,7 +26,6 @@ script = ExtResource("1_rj6dg")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(643.5, 359)
 scale = Vector2(0.72681, 0.667903)
-texture = ExtResource("1_yo1d1")
 script = SubResource("GDScript_f0wfs")
 
 [node name="HUD" type="Node2D" parent="."]
@@ -38,3 +37,10 @@ visible = false
 
 [node name="sound" parent="HUD" instance=ExtResource("5_rb8et")]
 visible = false
+
+[node name="CaptureDecran2024-10-02102921" type="Sprite2D" parent="."]
+position = Vector2(645.238, 359.25)
+scale = Vector2(0.725976, 0.660018)
+texture = ExtResource("5_dnh3l")
+
+[node name="feur" type="Node2D" parent="."]
