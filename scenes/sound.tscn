@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://2xlwrhij17y"]
+
+[node name="sound" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 523.0
+offset_top = 75.0
+offset_right = 571.0
+offset_bottom = 98.0
+text = "sound
+"

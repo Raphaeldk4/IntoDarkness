@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://by7bcu6bqms6q"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="start" type="Button" parent="."]
+offset_left = 504.0
+offset_top = 253.0
+offset_right = 549.0
+offset_bottom = 284.0
+text = "start"
+
+[node name="settings" type="Button" parent="."]
+offset_left = 492.0
+offset_top = 309.0
+offset_right = 559.0
+offset_bottom = 340.0
+text = "settings"
+
+[node name="exit" type="Button" parent="."]
+offset_left = 503.0
+offset_top = 361.0
+offset_right = 548.0
+offset_bottom = 392.0
+text = "exit
+"
+
+[node name="language" type="Button" parent="."]
+offset_left = 38.0
+offset_top = 30.0
+offset_right = 121.0
+offset_bottom = 61.0
+text = "Language"

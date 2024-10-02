@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqr70780u43kw"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_rj6dg"]
+[ext_resource type="Texture2D" uid="uid://skae4ybpuhdb" path="res://sprites/mainMenu/Capture_decran_2024-10-02_102921.png" id="1_yo1d1"]
+[ext_resource type="PackedScene" uid="uid://by7bcu6bqms6q" path="res://scenes/mainMenuHud.tscn" id="2_5cd0r"]
+[ext_resource type="PackedScene" uid="uid://bgyrtrehlo828" path="res://scenes/settings.tscn" id="4_3m4oy"]
+[ext_resource type="PackedScene" uid="uid://2xlwrhij17y" path="res://scenes/sound.tscn" id="5_rb8et"]
+
+[sub_resource type="GDScript" id="GDScript_f0wfs"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="mainMenu" type="Node2D"]
+script = ExtResource("1_rj6dg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577, 323)
+scale = Vector2(0.651584, 0.601113)
+texture = ExtResource("1_yo1d1")
+script = SubResource("GDScript_f0wfs")
+
+[node name="HUD" type="Node2D" parent="."]
+
+[node name="mainMenuHud" parent="HUD" instance=ExtResource("2_5cd0r")]
+
+[node name="settings" parent="HUD" instance=ExtResource("4_3m4oy")]
+visible = false
+
+[node name="sound" parent="HUD" instance=ExtResource("5_rb8et")]
+visible = false
