@@ -3,30 +3,29 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="start" type="Button" parent="."]
-offset_left = 504.0
-offset_top = 253.0
-offset_right = 549.0
-offset_bottom = 284.0
+offset_left = 512.0
+offset_top = 280.0
+offset_right = 768.0
+offset_bottom = 311.0
 text = "start"
 
 [node name="settings" type="Button" parent="."]
-offset_left = 492.0
-offset_top = 309.0
-offset_right = 559.0
-offset_bottom = 340.0
+offset_left = 512.0
+offset_top = 328.0
+offset_right = 632.0
+offset_bottom = 359.0
 text = "settings"
 
 [node name="exit" type="Button" parent="."]
-offset_left = 503.0
-offset_top = 361.0
-offset_right = 548.0
-offset_bottom = 392.0
-text = "exit
-"
+offset_left = 648.0
+offset_top = 328.0
+offset_right = 768.0
+offset_bottom = 359.0
+text = "exit"
 
 [node name="language" type="Button" parent="."]
-offset_left = 38.0
-offset_top = 30.0
-offset_right = 121.0
-offset_bottom = 61.0
-text = "Language"
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 115.0
+offset_bottom = 47.0
+text = "language"

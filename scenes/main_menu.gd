@@ -1,6 +1,7 @@
 extends Node2D
 
 var started = false
+var isEnglish = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,10 +9,12 @@ func _ready():
 	$HUD/mainMenuHud.get_node("start").pressed.connect(startGame)
 	$HUD/mainMenuHud.get_node("settings").pressed.connect(openSettings)
 	$HUD/mainMenuHud.get_node("exit").pressed.connect(exitGame)
+	$HUD/mainMenuHud.get_node("language").pressed.connect(changeLanguage)
 	
 	#connect settings menu buttons
 	$HUD/settings.get_node("sound").pressed.connect(openSound)
 	$HUD/settings.get_node("back").pressed.connect(back)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,3 +41,11 @@ func back():
 func openSound():
 	$HUD/settings.visible = false
 	$HUD/sound.visible = true
+	
+func changeLanguage(): 
+	if isEnglish == true:
+		TranslationServer.set_locale("fr")
+		isEnglish = false
+	else: 
+		TranslationServer.set_locale("en")
+		isEnglish = true

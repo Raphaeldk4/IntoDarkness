@@ -3,31 +3,30 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="optionsLabel" type="Label" parent="."]
-offset_left = 440.0
-offset_top = 149.0
-offset_right = 601.0
-offset_bottom = 218.0
+offset_left = 555.0
+offset_top = 208.0
+offset_right = 716.0
+offset_bottom = 277.0
 theme_override_font_sizes/font_size = 42
 text = "Options"
 
 [node name="sound" type="Button" parent="."]
-offset_left = 478.0
-offset_top = 226.0
-offset_right = 569.0
-offset_bottom = 276.0
+offset_left = 536.0
+offset_top = 280.0
+offset_right = 632.0
+offset_bottom = 312.0
 text = "sound"
 
 [node name="buttons" type="Button" parent="."]
-offset_left = 479.0
-offset_top = 293.0
-offset_right = 570.0
-offset_bottom = 343.0
-text = "Buttons
-"
+offset_left = 648.0
+offset_top = 280.0
+offset_right = 744.0
+offset_bottom = 312.0
+text = "buttons"
 
 [node name="back" type="Button" parent="."]
-offset_left = 479.0
-offset_top = 365.0
-offset_right = 570.0
-offset_bottom = 415.0
-text = "Back"
+offset_left = 536.0
+offset_top = 328.0
+offset_right = 744.0
+offset_bottom = 360.0
+text = "back"

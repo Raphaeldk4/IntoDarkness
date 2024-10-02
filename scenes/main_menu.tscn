@@ -24,8 +24,8 @@ func _process(delta):
 script = ExtResource("1_rj6dg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577, 323)
-scale = Vector2(0.651584, 0.601113)
+position = Vector2(643.5, 359)
+scale = Vector2(0.72681, 0.667903)
 texture = ExtResource("1_yo1d1")
 script = SubResource("GDScript_f0wfs")
 
