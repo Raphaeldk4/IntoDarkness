@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqr70780u43kw"]
 
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_rj6dg"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_rj6dg"]
 [ext_resource type="PackedScene" uid="uid://by7bcu6bqms6q" path="res://scenes/mainMenuHud.tscn" id="2_5cd0r"]
 [ext_resource type="PackedScene" uid="uid://bgyrtrehlo828" path="res://scenes/settings.tscn" id="4_3m4oy"]
 [ext_resource type="Texture2D" uid="uid://skae4ybpuhdb" path="res://sprites/mainMenu/Capture_decran_2024-10-02_102921.png" id="5_dnh3l"]
@@ -42,5 +42,3 @@ visible = false
 position = Vector2(645.238, 359.25)
 scale = Vector2(0.725976, 0.660018)
 texture = ExtResource("5_dnh3l")
-
-[node name="feur" type="Node2D" parent="."]

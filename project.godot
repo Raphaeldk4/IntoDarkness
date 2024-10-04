@@ -25,3 +25,7 @@ window/stretch/aspect="expand"
 [internationalization]
 
 locale/translations=PackedStringArray("res://translate.en.translation", "res://translate.fr.translation")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
