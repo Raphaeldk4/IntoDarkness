@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://2xlwrhij17y"]
+[gd_scene load_steps=2 format=3 uid="uid://2xlwrhij17y"]
+
+[ext_resource type="Script" path="res://Scripts/Control.gd" id="1_ptt5d"]
 
 [node name="sound" type="CanvasLayer"]
 
@@ -8,3 +10,20 @@ offset_top = 75.0
 offset_right = 571.0
 offset_bottom = 98.0
 text = "sound"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ptt5d")
+
+[node name="HSlider" type="HSlider" parent="Control"]
+offset_left = 378.0
+offset_top = 143.0
+offset_right = 726.0
+offset_bottom = 248.0
+min_value = -30.0
+max_value = 0.0
+
+[connection signal="value_changed" from="Control/HSlider" to="Control" method="_on_h_slider_value_changed"]
