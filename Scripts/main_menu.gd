@@ -2,6 +2,7 @@ extends Node2D
 
 var started = false
 var isEnglish = true
+var game = preload("res://scenes/game.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,6 +29,7 @@ func _process(delta):
 #main menu buttons
 func startGame(): 
 	started = true
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 	
 func openSettings():
 	$HUD/mainMenuHud.visible = false
