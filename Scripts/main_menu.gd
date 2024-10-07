@@ -11,9 +11,13 @@ func _ready():
 	$HUD/mainMenuHud.get_node("exit").pressed.connect(exitGame)
 	$HUD/mainMenuHud.get_node("language").pressed.connect(changeLanguage)
 	
+	
 	#connect settings menu buttons
 	$HUD/settings.get_node("sound").pressed.connect(openSound)
 	$HUD/settings.get_node("back").pressed.connect(back)
+	
+	#connect sound settings 
+	$HUD/sound.get_node("back").pressed.connect(backSound)
 	
 
 
@@ -49,3 +53,7 @@ func changeLanguage():
 	else: 
 		TranslationServer.set_locale("en")
 		isEnglish = true
+#settings menu settings
+func backSound():
+	$HUD/settings.visible = true
+	$HUD/sound.visible = false

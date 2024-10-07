@@ -5,10 +5,16 @@
 [node name="sound" type="CanvasLayer"]
 
 [node name="sound" type="Label" parent="."]
-offset_left = 523.0
-offset_top = 75.0
-offset_right = 571.0
-offset_bottom = 98.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.0
+offset_top = 105.0
+offset_right = 54.0
+offset_bottom = 155.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
 text = "sound"
 
 [node name="Control" type="Control" parent="."]
@@ -20,11 +26,63 @@ script = ExtResource("1_ptt5d")
 
 [node name="HSlider" type="HSlider" parent="Control"]
 layout_mode = 0
-offset_left = 378.0
-offset_top = 143.0
-offset_right = 726.0
-offset_bottom = 248.0
+offset_left = 520.0
+offset_top = 184.0
+offset_right = 868.0
+offset_bottom = 289.0
 min_value = -30.0
 max_value = 0.0
 
+[node name="music" type="HSlider" parent="Control"]
+offset_left = 520.0
+offset_top = 232.0
+offset_right = 868.0
+offset_bottom = 337.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="effects" type="HSlider" parent="Control"]
+offset_left = 520.0
+offset_top = 280.0
+offset_right = 868.0
+offset_bottom = 385.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="sound2" type="Label" parent="."]
+offset_left = 384.0
+offset_top = 216.0
+offset_right = 507.0
+offset_bottom = 266.0
+theme_override_font_sizes/font_size = 28
+text = "MASTER"
+horizontal_alignment = 1
+
+[node name="back" type="Button" parent="."]
+offset_left = 536.0
+offset_top = 368.0
+offset_right = 744.0
+offset_bottom = 400.0
+text = "back"
+
+[node name="sound3" type="Label" parent="."]
+offset_left = 384.0
+offset_top = 264.0
+offset_right = 507.0
+offset_bottom = 314.0
+theme_override_font_sizes/font_size = 28
+text = "MUSIC"
+horizontal_alignment = 1
+
+[node name="sound4" type="Label" parent="."]
+offset_left = 384.0
+offset_top = 312.0
+offset_right = 507.0
+offset_bottom = 362.0
+theme_override_font_sizes/font_size = 28
+text = "EFFECTS"
+horizontal_alignment = 1
+
 [connection signal="value_changed" from="Control/HSlider" to="Control" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Control/music" to="Control" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Control/effects" to="Control" method="_on_h_slider_value_changed"]
