@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chgrr4bjo8iok"
-path="res://.godot/imported/Tiles.png-5930aac9963e2622f838fbaba889d3b9.ctex"
+uid="uid://6wef1v0elh54"
+path="res://.godot/imported/Player Idle 48x48.png-7d67aecd68d2aa37aeabd672e9dfa102.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/Tiles.png"
-dest_files=["res://.godot/imported/Tiles.png-5930aac9963e2622f838fbaba889d3b9.ctex"]
+source_file="res://sprites/spriteSheet/Player Idle/Player Idle 48x48.png"
+dest_files=["res://.godot/imported/Player Idle 48x48.png-7d67aecd68d2aa37aeabd672e9dfa102.ctex"]
 
 [params]
 

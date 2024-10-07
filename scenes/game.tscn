@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5amppt33ypss"]
 
-[ext_resource type="PackedScene" uid="uid://c3jedtts5u0cu" path="res://scenes/character.tscn" id="1_ecv1y"]
+[ext_resource type="PackedScene" uid="uid://dfuvv2sdpn611" path="res://scenes/player.tscn" id="2_6o24a"]
 [ext_resource type="Texture2D" uid="uid://cc8kmeke3favg" path="res://sprites/Tileset/Tiles.png" id="2_qivbg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2k85"]
@@ -376,9 +376,10 @@ sources/0 = SubResource("TileSetAtlasSource_h2k85")
 position = Vector2(1, 0)
 tile_set = SubResource("TileSet_bce2o")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65536, 0, 0, 0, 393216, 4, -65535, 0, 0, 1, 327680, 5, -65534, 393216, 4, 2, 393216, 5, 3, 327680, 6, 4, 393216, 6, 5, 458752, 6, 6, 458752, 6, 7, 589824, 6, 8, 524288, 5, 9, 589824, 5, -65533, 327680, 5, -131068, 393216, 4, -65532, 393216, 5, 131071, 327680, 5, 65536, 393216, 5, 65539, 393216, 6, 65538, 393216, 6, 65537, 327680, 6, 65540, 458752, 6, 65541, 458752, 6, -131067, 458752, 4, -65531, 458752, 5, -131066, 524288, 4, -65530, 524288, 5, -65529, 589824, 5, -65528, 524288, 4, 10, 524288, 4, 65546, 524288, 5, 65547, 589824, 5, 65542, 458752, 6, 65543, 524288, 6, 65544, 458752, 6, 65545, 589824, 6)
+layer_0/tile_data = PackedInt32Array(0, 524288, 2, 65536, 524288, 3, 1, 589824, 2, 65537, 589824, 3, 2, 458752, 2, 65538, 458752, 3, 3, 524288, 2, 65539, 524288, 3, 4, 589824, 2, 65540, 589824, 3, 65533, 327680, 2, 131069, 327680, 3, 65534, 393216, 2, 131070, 393216, 3, 65535, 458752, 2, 131071, 458752, 3)
 
-[node name="Player" parent="." instance=ExtResource("1_ecv1y")]
+[node name="Player" parent="." instance=ExtResource("2_6o24a")]
+scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(1.2, 1.2)
