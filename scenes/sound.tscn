@@ -19,6 +19,7 @@ offset_bottom = 40.0
 script = ExtResource("1_ptt5d")
 
 [node name="HSlider" type="HSlider" parent="Control"]
+layout_mode = 0
 offset_left = 378.0
 offset_top = 143.0
 offset_right = 726.0
