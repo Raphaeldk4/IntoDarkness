@@ -1,20 +1,13 @@
-<<<<<<< HEAD
-[gd_scene load_steps=11 format=3 uid="uid://hqdlanfygs2l"]
-=======
-[gd_scene load_steps=11 format=3 uid="uid://clvvqayfralpd"]
->>>>>>> 60b3c62c1ad214c6d1be775ddca141003d98e4c6
+[gd_scene load_steps=13 format=3 uid="uid://clvvqayfralpd"]
 
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_dwhgh"]
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_hhnhc"]
 [ext_resource type="PackedScene" uid="uid://dhbvb5p1tv58b" path="res://sprites/bakground/parallax.tscn" id="1_ml8b5"]
-[ext_resource type="PackedScene" uid="uid://dfuvv2sdpn611" path="res://scenes/player.tscn" id="2_6o24a"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_6o24a"]
 [ext_resource type="Texture2D" uid="uid://ckyerh2i2ii5h" path="res://sprites/Tileset/free.png" id="2_onty6"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://bgyrtrehlo828" path="res://scenes/settings.tscn" id="6_3u0mq"]
-[ext_resource type="Texture2D" uid="uid://dtbrbqdrpabu0" path="res://sprites/Tileset/gate.png" id="6_npxj2"]
-=======
 [ext_resource type="PackedScene" uid="uid://csevfj3mf64tq" path="res://sprites/items/Gate.tscn" id="4_sxm3j"]
 [ext_resource type="PackedScene" uid="uid://cy6vjlgsucmdj" path="res://sprites/items/statue1.tscn" id="5_iyvvq"]
-[ext_resource type="PackedScene" uid="uid://bfw5dp0uyyfbg" path="res://tombStone.tscn" id="6_sjjkh"]
+[ext_resource type="PackedScene" path="res://tombStone.tscn" id="6_sjjkh"]
+[ext_resource type="PackedScene" uid="uid://bgyrtrehlo828" path="res://scenes/settings.tscn" id="8_ftmft"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_inti2"]
 texture = ExtResource("2_onty6")
@@ -111,7 +104,6 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_a6hee"]
 sources/0 = SubResource("TileSetAtlasSource_inti2")
->>>>>>> 60b3c62c1ad214c6d1be775ddca141003d98e4c6
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nucs"]
 texture = ExtResource("2_onty6")
@@ -376,12 +368,12 @@ sources/3 = SubResource("TileSetAtlasSource_4nucs")
 [node name="Game" type="Node2D"]
 process_mode = 3
 position = Vector2(268, 449)
-script = ExtResource("1_dwhgh")
+script = ExtResource("1_hhnhc")
 
 [node name="Background2" parent="." instance=ExtResource("1_ml8b5")]
 
 [node name="Background" type="TileMap" parent="."]
-position = Vector2(-89.2, 81)
+position = Vector2(-88.2, 81)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_a6hee")
 format = 2
@@ -407,14 +399,6 @@ scale = Vector2(2, 2)
 position = Vector2(1355, 72)
 scale = Vector2(3, 3)
 
-<<<<<<< HEAD
-[node name="Gate" type="Sprite2D" parent="."]
-position = Vector2(-213, 55)
-scale = Vector2(4, 5.68)
-texture = ExtResource("6_npxj2")
-
-[node name="settings" parent="." instance=ExtResource("6_3u0mq")]
-=======
 [node name="Statue1" parent="statue" instance=ExtResource("5_iyvvq")]
 position = Vector2(1157.67, -22)
 
@@ -437,4 +421,7 @@ position = Vector2(2793, 51)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("6_sjjkh")]
 position = Vector2(5625, 69)
->>>>>>> 60b3c62c1ad214c6d1be775ddca141003d98e4c6
+
+[node name="settings" parent="." instance=ExtResource("8_ftmft")]
+process_mode = 2
+visible = false

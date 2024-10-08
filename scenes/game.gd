@@ -1,7 +1,6 @@
 extends Node2D
 
 var isPaused = false
-var soundWidget = $settings.get_node("sound2")
 func _ready():
 	$settings.get_node("back").pressed.connect(back)
 	
@@ -14,7 +13,6 @@ func _process(delta):
 		else:
 			get_tree().paused = false 
 			$settings.visible = false
-			$settings.soundWidget = false
 			isPaused = false
 			
 
