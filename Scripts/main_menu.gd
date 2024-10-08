@@ -4,6 +4,7 @@ var started = false
 var isEnglish = true
 var game = preload("res://scenes/game.tscn")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#connect main menu buttons
@@ -12,14 +13,11 @@ func _ready():
 	$HUD/mainMenuHud.get_node("exit").pressed.connect(exitGame)
 	$HUD/mainMenuHud.get_node("language").pressed.connect(changeLanguage)
 	
-	
-	#connect settings menu buttons
-	$HUD/settings.get_node("sound").pressed.connect(openSound)
+	#settings back 
 	$HUD/settings.get_node("back").pressed.connect(back)
+
 	
-	#connect sound settings 
-	$HUD/sound.get_node("back").pressed.connect(backSound)
-	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,16 +36,7 @@ func openSettings():
 func exitGame(): 
 	get_tree().quit()
 
-#settings menu buttons
-func back():
-	if started == false: 
-		$HUD/mainMenuHud.visible = true
-		$HUD/settings.visible = false
-	
-func openSound():
-	$HUD/settings.visible = false
-	$HUD/sound.visible = true
-	
+
 func changeLanguage(): 
 	if isEnglish == true:
 		TranslationServer.set_locale("fr")
@@ -55,7 +44,7 @@ func changeLanguage():
 	else: 
 		TranslationServer.set_locale("en")
 		isEnglish = true
-#settings menu settings
-func backSound():
-	$HUD/settings.visible = true
-	$HUD/sound.visible = false
+
+
+func back():
+	$HUD/mainMenuHud.visible = true

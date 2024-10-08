@@ -34,6 +34,7 @@ min_value = -30.0
 max_value = 0.0
 
 [node name="music" type="HSlider" parent="Control"]
+layout_mode = 0
 offset_left = 520.0
 offset_top = 232.0
 offset_right = 868.0
@@ -42,6 +43,7 @@ min_value = -30.0
 max_value = 0.0
 
 [node name="effects" type="HSlider" parent="Control"]
+layout_mode = 0
 offset_left = 520.0
 offset_top = 280.0
 offset_right = 868.0

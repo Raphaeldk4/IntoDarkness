@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqr70780u43kw"]
+[gd_scene load_steps=6 format=3 uid="uid://bqr70780u43kw"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_rj6dg"]
 [ext_resource type="PackedScene" uid="uid://by7bcu6bqms6q" path="res://scenes/mainMenuHud.tscn" id="2_5cd0r"]
 [ext_resource type="PackedScene" uid="uid://bgyrtrehlo828" path="res://scenes/settings.tscn" id="4_3m4oy"]
 [ext_resource type="Texture2D" uid="uid://skae4ybpuhdb" path="res://sprites/mainMenu/Capture_decran_2024-10-02_102921.png" id="5_dnh3l"]
-[ext_resource type="PackedScene" uid="uid://2xlwrhij17y" path="res://scenes/sound.tscn" id="5_rb8et"]
 
 [sub_resource type="GDScript" id="GDScript_f0wfs"]
 script/source = "extends Sprite2D
@@ -33,9 +32,6 @@ script = SubResource("GDScript_f0wfs")
 [node name="mainMenuHud" parent="HUD" instance=ExtResource("2_5cd0r")]
 
 [node name="settings" parent="HUD" instance=ExtResource("4_3m4oy")]
-visible = false
-
-[node name="sound" parent="HUD" instance=ExtResource("5_rb8et")]
 visible = false
 
 [node name="CaptureDecran2024-10-02102921" type="Sprite2D" parent="."]

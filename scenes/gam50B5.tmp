@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://hqdlanfygs2l"]
+[gd_scene load_steps=10 format=3 uid="uid://hqdlanfygs2l"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_dwhgh"]
 [ext_resource type="PackedScene" uid="uid://dhbvb5p1tv58b" path="res://sprites/bakground/parallax.tscn" id="1_ml8b5"]
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_6o24a"]
 [ext_resource type="Texture2D" uid="uid://ckyerh2i2ii5h" path="res://sprites/Tileset/free.png" id="2_onty6"]
-[ext_resource type="PackedScene" uid="uid://bgyrtrehlo828" path="res://scenes/settings.tscn" id="6_3u0mq"]
 [ext_resource type="Texture2D" uid="uid://dtbrbqdrpabu0" path="res://sprites/Tileset/gate.png" id="6_npxj2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nucs"]
@@ -374,7 +373,6 @@ texture = ExtResource("2_onty6")
 sources/0 = SubResource("TileSetAtlasSource_inti2")
 
 [node name="Game" type="Node2D"]
-process_mode = 3
 position = Vector2(268, 449)
 script = ExtResource("1_dwhgh")
 
@@ -388,7 +386,6 @@ format = 2
 layer_0/tile_data = PackedInt32Array(65536, 3, 2, 65537, 3, 2, 65538, 3, 2, 65539, 3, 2, 65540, 3, 2, 131069, 3, 2, 131070, 3, 2, 131071, 3, 2, 65541, 3, 2, 65542, 3, 2, 131067, 65539, 0, 131068, 3, 2, 65543, 3, 2, 65544, 131075, 0, 131080, 131075, 1, 196616, 131075, 1, 196603, 65539, 1, 196604, 3, 0, 262152, 131075, 1, 131079, 3, 0, 196615, 3, 0, 196614, 3, 0, 262150, 3, 0, 262149, 3, 0, 262148, 3, 0, 196612, 3, 0, 196611, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131075, 3, 0, 131074, 3, 0, 131073, 3, 0, 131072, 3, 0, 196607, 3, 0, 196606, 3, 0, 196605, 3, 0, 262140, 3, 0, 262141, 3, 0, 327677, 3, 0, 262142, 3, 0, 262143, 3, 0, 196608, 3, 0, 196609, 3, 0, 196610, 3, 0, 196613, 3, 0, 262151, 3, 0, 262147, 3, 0, 262146, 3, 0, 262145, 3, 0, 262144, 3, 0, 327679, 3, 0, 327678, 3, 0, 327688, 131075, 1, 327687, 3, 0, 327686, 3, 0, 327685, 3, 0, 327684, 3, 0, 327683, 3, 0, 327682, 3, 0, 327681, 3, 0, 327680, 3, 0, 393215, 3, 0, 393214, 3, 0, 393213, 3, 0, 393212, 3, 0, 327676, 3, 0, 262139, 65539, 1, 327675, 65539, 1, 393211, 65539, 1, -131059, 524291, 0, -65523, 524291, 1, -131058, 589827, 0, -65522, 589827, 1, -131060, 327683, 0, -65524, 327683, 1, 458750, 3, 0, 458751, 3, 0, 393216, 3, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 458749, 3, 0, 393224, 131075, 1, 458760, 131075, 1, 524285, 3, 0, 524286, 3, 0, 524287, 3, 0, 458752, 3, 0, 458753, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458748, 3, 0, 524284, 3, 0, 524283, 65539, 1, 458747, 65539, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_6o24a")]
-process_mode = 1
 position = Vector2(-25, 84)
 scale = Vector2(4, 4)
 
@@ -408,5 +405,3 @@ layer_0/tile_data = PackedInt32Array(-5, 1310720, 2, 65531, 1310720, 3, -4, 1376
 position = Vector2(-213, 55)
 scale = Vector2(4, 5.68)
 texture = ExtResource("6_npxj2")
-
-[node name="settings" parent="." instance=ExtResource("6_3u0mq")]
