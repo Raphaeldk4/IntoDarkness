@@ -195,7 +195,6 @@ animations = [{
 size = Vector2(14, 31)
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 2
 script = ExtResource("1_p5nwe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -204,6 +203,8 @@ position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_bw3us")
 animation = &"jump"
 autoplay = "idle"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -11.5)

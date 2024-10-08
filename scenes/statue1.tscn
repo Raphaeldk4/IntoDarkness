@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy6vjlgsucmdj"]
+
+[ext_resource type="Texture2D" uid="uid://cj0roj4oxls6h" path="res://sprites/items/statue.png" id="1_wyf8c"]
+[ext_resource type="AudioStream" uid="uid://bplq37fqqafcw" path="res://Sound/Beating heart.wav" id="2_j8wtw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uudrh"]
+size = Vector2(26, 42)
+
+[node name="statue" type="Area2D"]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wyf8c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uudrh")
+
+[node name="heart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_j8wtw")
+volume_db = 24.0
