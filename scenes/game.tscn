@@ -390,30 +390,33 @@ scale = Vector2(4, 4)
 position = Vector2(0, -24.75)
 scale = Vector2(2, 2)
 
-[node name="statue" type="Node2D" parent="."]
-position = Vector2(1355, 72)
+[node name="Items" type="Node" parent="."]
+
+[node name="statue" type="Node2D" parent="Items"]
+position = Vector2(1625, 527)
 scale = Vector2(3, 3)
 
-[node name="Statue1" parent="statue" instance=ExtResource("5_iyvvq")]
+[node name="Statue1" parent="Items/statue" instance=ExtResource("5_iyvvq")]
 position = Vector2(1157.67, -22)
 
-[node name="Statue2" parent="statue" instance=ExtResource("5_iyvvq")]
+[node name="Statue2" parent="Items/statue" instance=ExtResource("5_iyvvq")]
 position = Vector2(566.667, -21.6667)
 
-[node name="Statue3" parent="statue" instance=ExtResource("5_iyvvq")]
+[node name="Statue3" parent="Items/statue" instance=ExtResource("5_iyvvq")]
 position = Vector2(1719.67, -20.3333)
 
-[node name="StatueTuto" parent="statue" instance=ExtResource("5_iyvvq")]
+[node name="StatueTuto" parent="Items/statue" instance=ExtResource("5_iyvvq")]
 position = Vector2(403, -22.3333)
 
-[node name="Gates" type="Node2D" parent="."]
+[node name="Gates" type="Node2D" parent="Items"]
+position = Vector2(270, 455)
 
-[node name="Gate" parent="Gates" instance=ExtResource("4_sxm3j")]
+[node name="Gate" parent="Items/Gates" instance=ExtResource("4_sxm3j")]
 position = Vector2(-202, 70)
 
-[node name="GateTuto" parent="Gates" instance=ExtResource("4_sxm3j")]
-position = Vector2(2791, -361)
+[node name="GateTuto" parent="Items/Gates" instance=ExtResource("4_sxm3j")]
+position = Vector2(2793, 51)
 
-[node name="endOfLevel" parent="." instance=ExtResource("6_sjjkh")]
-position = Vector2(5625, -9)
+[node name="endOfLevel" parent="Items" instance=ExtResource("6_sjjkh")]
+position = Vector2(5895, 446)
 scale = Vector2(6, 6)
