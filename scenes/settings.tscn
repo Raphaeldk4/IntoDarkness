@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://bgyrtrehlo828"]
+[gd_scene load_steps=3 format=3 uid="uid://bgyrtrehlo828"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[ext_resource type="Script" path="res://scenes/settings.gd" id="1_cl0gw"]
+[ext_resource type="PackedScene" uid="uid://2xlwrhij17y" path="res://scenes/sound.tscn" id="2_5bifg"]
+
+[node name="settings" type="CanvasLayer"]
+script = ExtResource("1_cl0gw")
 
 [node name="optionsLabel" type="Label" parent="."]
 offset_left = 555.0
@@ -30,3 +34,6 @@ offset_top = 328.0
 offset_right = 744.0
 offset_bottom = 360.0
 text = "back"
+
+[node name="sound2" parent="." instance=ExtResource("2_5bifg")]
+visible = false
