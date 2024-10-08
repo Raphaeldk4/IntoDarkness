@@ -364,7 +364,7 @@ physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_4nucs")
 
 [node name="Game" type="Node2D"]
-position = Vector2(268, 449)
+position = Vector2(270, 455)
 
 [node name="Background2" parent="." instance=ExtResource("1_ml8b5")]
 
@@ -412,7 +412,8 @@ position = Vector2(403, -22.3333)
 position = Vector2(-202, 70)
 
 [node name="GateTuto" parent="Gates" instance=ExtResource("4_sxm3j")]
-position = Vector2(2793, 51)
+position = Vector2(2791, -361)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("6_sjjkh")]
-position = Vector2(5625, 69)
+[node name="endOfLevel" parent="." instance=ExtResource("6_sjjkh")]
+position = Vector2(5625, -9)
+scale = Vector2(6, 6)
