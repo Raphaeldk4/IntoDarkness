@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl4r1c2276orq"]
+
+[ext_resource type="Texture2D" uid="uid://cg17rhvj8n5eg" path="res://sprites/items/tomb2.png" id="1_2i4or"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdvkk"]
+size = Vector2(20, 42)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2i4or")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kdvkk")
