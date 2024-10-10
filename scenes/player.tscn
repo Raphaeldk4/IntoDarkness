@@ -154,7 +154,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h2prr")
 }, {
-"duration": 1.0,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_15rip")
 }],
 "loop": false,
@@ -203,8 +203,6 @@ position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_bw3us")
 animation = &"jump"
 autoplay = "idle"
-frame = 5
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -11.5)
