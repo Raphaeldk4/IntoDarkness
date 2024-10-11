@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyntgqlq3xukh"]
+
+[ext_resource type="Texture2D" uid="uid://dawrckcp88sro" path="res://sprites/items/doorway.png" id="1_ko2ts"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kcx45"]
+radius = 34.0
+height = 68.0
+
+[node name="Doorway" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ko2ts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_kcx45")

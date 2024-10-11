@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqs2edc6ghyya"]
+
+[ext_resource type="PackedScene" uid="uid://dfuvv2sdpn611" path="res://scenes/player.tscn" id="2_7x2gu"]
+[ext_resource type="AudioStream" uid="uid://dyjd84dollwxb" path="res://Sound/music/Cemetery Shadows.mp3" id="2_wtd5s"]
+[ext_resource type="AudioStream" uid="uid://c0ke4fj48dhgj" path="res://Sound/effects/succes_sound.mp3" id="3_xrtq0"]
+[ext_resource type="AudioStream" uid="uid://byqnj76yhxhtt" path="res://Sound/effects/OOT_Error.wav" id="4_1m14y"]
+
+[sub_resource type="Animation" id="Animation_abny4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jvrc6"]
+resource_name = "tipewritting"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6q2uh"]
+_data = {
+"RESET": SubResource("Animation_abny4"),
+"tipewritting": SubResource("Animation_jvrc6")
+}
+
+[node name="Level2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_7x2gu")]
+process_mode = 1
+position = Vector2(17, 32)
+
+[node name="mainCamera" type="Camera2D" parent="Player"]
+position = Vector2(0, -24.75)
+scale = Vector2(2, 2)
+
+[node name="sounds" type="Node" parent="Player/mainCamera"]
+
+[node name="Control" type="Control" parent="Player"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -160.0
+offset_top = 41.0
+offset_right = 160.0
+offset_bottom = 65.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 319.0
+offset_bottom = 23.0
+theme_override_font_sizes/normal_font_size = 10
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut magna velit, ultricies at mi nec, suscipit accum"
+fit_content = true
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Control"]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_6q2uh")
+}
+
+[node name="Enigma label" type="Control" parent="Player"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -160.0
+offset_top = 41.0
+offset_right = 160.0
+offset_bottom = 65.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Enigma label"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 319.0
+offset_bottom = 23.0
+theme_override_font_sizes/normal_font_size = 10
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut magna velit, ultricies at mi nec, suscipit accum"
+fit_content = true
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Enigma label"]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_6q2uh")
+}
+
+[node name="GameMusic" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("2_wtd5s")
+volume_db = -10.0
+
+[node name="succes" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("3_xrtq0")
+
+[node name="error" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2(-0.5, 0.5)
+scale = Vector2(0.25, 0.25)
+stream = ExtResource("4_1m14y")

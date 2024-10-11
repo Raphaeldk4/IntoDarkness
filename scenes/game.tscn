@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://clvvqayfralpd"]
+[gd_scene load_steps=20 format=3 uid="uid://clvvqayfralpd"]
 
 [ext_resource type="PackedScene" uid="uid://dhbvb5p1tv58b" path="res://sprites/bakground/parallax.tscn" id="1_ml8b5"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_ujuna"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://csevfj3mf64tq" path="res://scenes/Gate.tscn" id="6_xko12"]
 [ext_resource type="AudioStream" uid="uid://byqnj76yhxhtt" path="res://Sound/effects/OOT_Error.wav" id="7_0jti2"]
 [ext_resource type="PackedScene" uid="uid://bgyrtrehlo828" path="res://scenes/settings.tscn" id="8_nf2xy"]
+[ext_resource type="PackedScene" uid="uid://dyntgqlq3xukh" path="res://scenes/Doorway.tscn" id="11_grrp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_inti2"]
 texture = ExtResource("2_onty6")
@@ -531,8 +532,35 @@ libraries = {
 "": SubResource("AnimationLibrary_6q2uh")
 }
 
+[node name="Enigma label" type="Control" parent="Player"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -160.0
+offset_top = 41.0
+offset_right = 160.0
+offset_bottom = 65.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Enigma label"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 319.0
+offset_bottom = 23.0
+theme_override_font_sizes/normal_font_size = 10
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut magna velit, ultricies at mi nec, suscipit accum"
+fit_content = true
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Enigma label"]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_6q2uh")
+}
+
 [node name="GameMusic" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("5_a0w33")
+volume_db = -10.0
 
 [node name="succes" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("6_6thxr")
@@ -575,6 +603,10 @@ position = Vector2(5895, 446)
 scale = Vector2(6, 6)
 collision_layer = 2
 
+[node name="Doorway" parent="Items/endOfLevel" instance=ExtResource("11_grrp3")]
+visible = false
+position = Vector2(0.333333, 11.6667)
+
 [node name="settings" parent="." instance=ExtResource("8_nf2xy")]
 process_mode = 2
 visible = false
@@ -589,3 +621,4 @@ visible = false
 [connection signal="body_exited" from="Items/statue/statue3" to="." method="_on_statue_3_body_exited"]
 [connection signal="body_entered" from="Items/endOfLevel" to="." method="_on_end_of_level_body_entered"]
 [connection signal="body_exited" from="Items/endOfLevel" to="." method="_on_end_of_level_body_exited"]
+[connection signal="body_entered" from="Items/endOfLevel/Doorway" to="." method="_on_doorway_body_entered"]

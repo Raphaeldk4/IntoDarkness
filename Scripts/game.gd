@@ -12,6 +12,7 @@ var answer = "123"
 var testAnswer
 var tutoOver =false
 var enigma =false
+var successEnigma = false
 #endregion
 
 func _ready():
@@ -21,7 +22,7 @@ func _ready():
 	testAnswer = ""
 	$Player/GameMusic.play()
 
-func _process(delta):
+func _process(_delta):
 	
 	#restart si tombe dans un trou
 	if player.position.y > 500:
@@ -63,7 +64,7 @@ func _process(delta):
 		$Items/statue/statue3/Lever.play()
 		testAnswer = testAnswer + "3"
 
-	if Input.is_action_just_pressed("Activate") && enigma == true:
+	if Input.is_action_just_pressed("Activate") && enigma && successEnigma == false:
 		if testAnswer.length() == 0:
 			$Items/statue/statue1/heart.play()
 			$Items/statue/statue2/heart.stop()
@@ -81,7 +82,8 @@ func _process(delta):
 
 	if testAnswer.length() == 3:
 		if testAnswer == answer:
-			$Player/succes.play()
+			successEnigma = true
+			$Items/endOfLevel/Doorway.visible= true
 		else:
 			$Player/error.play()
 			testAnswer=""
@@ -99,8 +101,9 @@ func back():
 	get_tree().paused = false 
 	isPaused = false
 
-# Check statue
+#region Collision checks
 
+# Check statue
 func _on_statue_tuto_body_entered(body):
 	if body == $Player:
 		isInStatue = true
@@ -147,8 +150,15 @@ func _on_statue_3_body_exited(body):
 func _on_end_of_level_body_entered(body):
 	if body == $Player:
 		isInEndLevel = true
-		#enigma = true
+
 
 func _on_end_of_level_body_exited(body):
 	if body == $Player:
 		isInEndLevel = false
+
+func _on_doorway_body_entered(body):
+	if body == $Player && successEnigma:
+		$Player/succes.play()
+
+#endregion
+
