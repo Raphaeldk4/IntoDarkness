@@ -504,8 +504,6 @@ scale = Vector2(4, 4)
 position = Vector2(0, -24.75)
 scale = Vector2(2, 2)
 
-[node name="sounds" type="Node" parent="Player/mainCamera"]
-
 [node name="Control" type="Control" parent="Player"]
 layout_mode = 3
 anchors_preset = 0
