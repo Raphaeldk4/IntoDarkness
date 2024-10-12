@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://clvvqayfralpd"]
+[gd_scene load_steps=21 format=3 uid="uid://clvvqayfralpd"]
 
 [ext_resource type="PackedScene" uid="uid://dhbvb5p1tv58b" path="res://sprites/bakground/parallax.tscn" id="1_ml8b5"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_ujuna"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://csevfj3mf64tq" path="res://scenes/Gate.tscn" id="6_xko12"]
 [ext_resource type="AudioStream" uid="uid://byqnj76yhxhtt" path="res://Sound/effects/OOT_Error.wav" id="7_0jti2"]
 [ext_resource type="PackedScene" uid="uid://bgyrtrehlo828" path="res://scenes/settings.tscn" id="8_nf2xy"]
+[ext_resource type="AudioStream" uid="uid://bl7m7puo2ub88" path="res://Sound/effects/digging.wav" id="10_dc6ow"]
 [ext_resource type="PackedScene" uid="uid://dyntgqlq3xukh" path="res://scenes/Doorway.tscn" id="11_grrp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_inti2"]
@@ -595,6 +596,9 @@ position = Vector2(-202, 70)
 [node name="GateTuto" parent="Items/Gates" instance=ExtResource("6_xko12")]
 position = Vector2(2793, 51)
 collision_mask = 3
+
+[node name="digging" type="AudioStreamPlayer2D" parent="Items/Gates/GateTuto"]
+stream = ExtResource("10_dc6ow")
 
 [node name="endOfLevel" parent="Items" instance=ExtResource("6_sjjkh")]
 position = Vector2(5895, 446)

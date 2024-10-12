@@ -1,5 +1,5 @@
 extends Node2D
-#region variables
+#region Déclaration variables
 var player
 var isPaused = false
 var isInStatue = false
@@ -44,6 +44,7 @@ func _process(_delta):
 
 	if  Input.is_action_just_pressed("Activate") && isInStatue:
 		$Items/statue/statueTuto/Lever.play()
+		$Items/Gates/GateTuto/digging.play()
 		for i in 20:
 			gate.position.y = gate.position.y + 10
 			await get_tree().create_timer(0.1).timeout
