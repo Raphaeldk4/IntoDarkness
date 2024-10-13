@@ -151,12 +151,14 @@ func _on_statue_3_body_exited(body):
 func _on_end_of_level_body_entered(body):
 	if body == $Player:
 		isInEndLevel = true
-
+		$"Player/Enigma label/AnimationPlayer".active = true
+		$"Player/Enigma label/AnimationPlayer".play("enigmaend")
 
 func _on_end_of_level_body_exited(body):
 	if body == $Player:
 		isInEndLevel = false
-
+		$"Player/Enigma label".queue_free()
+		
 func _on_doorway_body_entered(body):
 	if body == $Player && successEnigma:
 		$Player/succes.play()
