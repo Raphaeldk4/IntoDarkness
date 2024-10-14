@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgyrtrehlo828"]
+[gd_scene load_steps=4 format=3 uid="uid://bgyrtrehlo828"]
 
 [ext_resource type="Script" path="res://settings.gd" id="1_cl0gw"]
 [ext_resource type="PackedScene" uid="uid://2xlwrhij17y" path="res://scenes/sound.tscn" id="2_5bifg"]
+[ext_resource type="PackedScene" uid="uid://ddokxn1tlfjiw" path="res://scenes/input_settings.tscn" id="3_sdqfd"]
 
 [node name="settings" type="CanvasLayer"]
 script = ExtResource("1_cl0gw")
@@ -37,3 +38,8 @@ text = "back"
 
 [node name="sound2" parent="." instance=ExtResource("2_5bifg")]
 visible = false
+
+[node name="inputSettingsCanvas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="InputSettings" parent="inputSettingsCanvas" instance=ExtResource("3_sdqfd")]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_rj6dg"]
 [ext_resource type="PackedScene" uid="uid://by7bcu6bqms6q" path="res://scenes/mainMenuHud.tscn" id="2_5cd0r"]
 [ext_resource type="PackedScene" uid="uid://bgyrtrehlo828" path="res://scenes/settings.tscn" id="4_3m4oy"]
-[ext_resource type="Texture2D" uid="uid://skae4ybpuhdb" path="res://sprites/mainMenu/Capture_decran_2024-10-02_102921.png" id="5_dnh3l"]
+[ext_resource type="Texture2D" uid="uid://l381783bw33c" path="res://sprites/bakground/fond .png" id="4_edy1e"]
 
 [sub_resource type="GDScript" id="GDScript_f0wfs"]
 script/source = "extends Sprite2D
@@ -35,6 +35,6 @@ script = SubResource("GDScript_f0wfs")
 visible = false
 
 [node name="CaptureDecran2024-10-02102921" type="Sprite2D" parent="."]
-position = Vector2(645.238, 359.25)
-scale = Vector2(0.725976, 0.660018)
-texture = ExtResource("5_dnh3l")
+position = Vector2(623, 404)
+scale = Vector2(0.859132, 0.781076)
+texture = ExtResource("4_edy1e")

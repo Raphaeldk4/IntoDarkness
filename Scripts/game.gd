@@ -11,18 +11,21 @@ var gate
 var answer = "123"
 var testAnswer
 var tutoStart =false
+var tutoOver =false
 var enigma =false
 var successEnigma = false
 var isInLevelEndBegin = false
 var checkDone= false
-#endregion
 
+
+#endregion
 func _ready():
 	player = get_node("Player")
 	gate = get_node("Items/Gates/GateTuto")
 	$settings.get_node("back").pressed.connect(back)
 	testAnswer = ""
 	$Player/GameMusic.play()
+	
 
 func _process(_delta):
 	
@@ -39,20 +42,24 @@ func _process(_delta):
 		else:
 			get_tree().paused = false 
 			$settings.visible = false
+			$settings.get_node("inputSettingsCanvas").visible = false
+			$settings.get_node("sound2").visible = false
 			isPaused = false
 
 
 	# Making the gate disapear in tuto
 
-	if  Input.is_action_just_pressed("Activate") && isInStatue && tutoStart:
+	if  Input.is_action_just_pressed("Activate") && isInStatue && !tutoOver :
 		$Items/statue/statueTuto/Lever.play()
 		$Items/Gates/GateTuto/digging.play()
 		for i in 20:
 			gate.position.y = gate.position.y + 10
 			await get_tree().create_timer(0.1).timeout
 		$Player/Control.queue_free()
-		$Items/Gates.remove_child(gate)
+		$Items/Gates/GateTuto.visible =false
+		$Items/Gates/GateTuto/CollisionShape2D.queue_free()
 		tutoStart = false
+		tutoOver = true
 
 	# Checks pour la réponse a  l'énigme
 	
@@ -69,7 +76,7 @@ func _process(_delta):
 		testAnswer = testAnswer + "3"
 
 	if Input.is_action_just_pressed("Activate") && enigma && successEnigma == false:
-		
+		var heart = preload("res://Sound/effects/Beating heart.wav")
 		if testAnswer.length() == 0:
 			$Items/statue/statue1/heart.play()
 			$Items/statue/statue2/heart.stop()
@@ -106,13 +113,31 @@ func back():
 	get_tree().paused = false 
 	isPaused = false
 
+func _on_gate_body_entered(body):
+	if body == $Player:
+		$Player.noLeft = true
+
+func _on_gate_body_exited(body):
+	if body == $Player:
+		$Player.noLeft = false
+
+
+func _on_gate_tuto_body_entered(body):
+	if body == $Player:
+		$Player.noRight = true
+
+
+
+func _on_gate_tuto_body_exited(body):
+	if body == $Player:
+		$Player.noRight = false
 #region Collision checks
 
 # Check statue
 func _on_statue_tuto_body_entered(body):
 	if body == $Player:
 		isInStatue = true
-		if tutoStart == false:
+		if tutoStart == false && !tutoOver:
 			$Player/Control/AnimationPlayer.active = true
 			$Player/Control/AnimationPlayer.play("tipewritting")
 			tutoStart = true
@@ -154,18 +179,19 @@ func _on_statue_3_body_exited(body):
 #Début fin de niveau
 func _on_end_of_level_body_entered(body):
 	if body == $Player:
+		print("kjvljv")
 		isInEndLevel = true
-		if isInLevelEndBegin:
+		if isInEndLevel:
 			$"Player/Enigma label/AnimationPlayer".active = true
 			$"Player/Enigma label/AnimationPlayer".play("enigmaend")
+			await get_tree().create_timer(10).timeout
+			$"Player/Enigma label".visible = false
 			isInLevelEndBegin = false
 
 func _on_end_of_level_body_exited(body):
 	if body == $Player:
 		isInEndLevel = false
-		if find_child("Player/Enigma label"):
-			$"Player/Enigma label".queue_free()
-		
+
 func _on_doorway_body_entered(body):
 	if body == $Player && successEnigma:
 		$Player/succes.play()

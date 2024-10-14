@@ -17,8 +17,10 @@ texture = ExtResource("1_wyf8c")
 shape = SubResource("RectangleShape2D_uudrh")
 
 [node name="heart" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-0.5, 0)
 stream = ExtResource("2_j8wtw")
-volume_db = 5.0
+volume_db = 20.0
+max_distance = 3000.0
 
 [node name="Lever" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_gcfmj")

@@ -6,6 +6,7 @@ func _ready():
 	#connect settings menu buttons
 	$".".get_node("sound").pressed.connect(openSound)
 	$".".get_node("back").pressed.connect(back)
+	$".".get_node("buttons").pressed.connect(buttons)
 	
 	#connect sound settings 
 	$sound2.get_node("back").pressed.connect(backSound)
@@ -26,3 +27,7 @@ func openSound():
 func backSound():
 	$".".visible = true
 	$sound2.visible = false
+
+func buttons():
+	$".".visible =false
+	$inputSettingsCanvas.visible = true

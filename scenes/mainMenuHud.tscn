@@ -3,29 +3,52 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="start" type="Button" parent="."]
-offset_left = 512.0
-offset_top = 280.0
-offset_right = 768.0
-offset_bottom = 311.0
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.4
+anchor_right = 0.6
+anchor_bottom = 0.433
+offset_top = -8.0
+offset_bottom = -0.76001
+grow_horizontal = 2
+grow_vertical = 2
 text = "start"
 
 [node name="settings" type="Button" parent="."]
-offset_left = 512.0
-offset_top = 328.0
-offset_right = 632.0
-offset_bottom = 359.0
+anchors_preset = -1
+anchor_left = 0.406
+anchor_top = 0.456
+anchor_right = 0.494
+anchor_bottom = 0.5
+offset_left = -7.68005
+offset_top = -0.320007
+offset_right = -0.320007
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "settings"
 
 [node name="exit" type="Button" parent="."]
-offset_left = 648.0
-offset_top = 328.0
-offset_right = 768.0
-offset_bottom = 359.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.456
+anchor_right = 0.6
+anchor_bottom = 0.499
+offset_left = 8.0
+offset_top = -0.320007
+offset_bottom = -0.279999
+grow_horizontal = 2
+grow_vertical = 2
 text = "exit"
 
 [node name="language" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 32.0
 offset_top = 16.0
-offset_right = 115.0
-offset_bottom = 47.0
+offset_right = -1165.0
+offset_bottom = -673.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "language"
