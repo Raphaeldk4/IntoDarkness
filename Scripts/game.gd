@@ -10,9 +10,11 @@ var isInEndLevel = false
 var gate
 var answer = "123"
 var testAnswer
-var tutoOver =false
+var tutoStart =false
 var enigma =false
 var successEnigma = false
+var isInLevelEndBegin = false
+var checkDone= false
 #endregion
 
 func _ready():
@@ -42,7 +44,7 @@ func _process(_delta):
 
 	# Making the gate disapear in tuto
 
-	if  Input.is_action_just_pressed("Activate") && isInStatue:
+	if  Input.is_action_just_pressed("Activate") && isInStatue && tutoStart:
 		$Items/statue/statueTuto/Lever.play()
 		$Items/Gates/GateTuto/digging.play()
 		for i in 20:
@@ -50,6 +52,7 @@ func _process(_delta):
 			await get_tree().create_timer(0.1).timeout
 		$Player/Control.queue_free()
 		$Items/Gates.remove_child(gate)
+		tutoStart = false
 
 	# Checks pour la réponse a  l'énigme
 	
@@ -66,6 +69,7 @@ func _process(_delta):
 		testAnswer = testAnswer + "3"
 
 	if Input.is_action_just_pressed("Activate") && enigma && successEnigma == false:
+		
 		if testAnswer.length() == 0:
 			$Items/statue/statue1/heart.play()
 			$Items/statue/statue2/heart.stop()
@@ -108,10 +112,10 @@ func back():
 func _on_statue_tuto_body_entered(body):
 	if body == $Player:
 		isInStatue = true
-		if tutoOver == false:
+		if tutoStart == false:
 			$Player/Control/AnimationPlayer.active = true
 			$Player/Control/AnimationPlayer.play("tipewritting")
-			tutoOver = true
+			tutoStart = true
 
 func _on_statue_tuto_body_exited(body):
 	if body == $Player:
@@ -151,13 +155,16 @@ func _on_statue_3_body_exited(body):
 func _on_end_of_level_body_entered(body):
 	if body == $Player:
 		isInEndLevel = true
-		$"Player/Enigma label/AnimationPlayer".active = true
-		$"Player/Enigma label/AnimationPlayer".play("enigmaend")
+		if isInLevelEndBegin:
+			$"Player/Enigma label/AnimationPlayer".active = true
+			$"Player/Enigma label/AnimationPlayer".play("enigmaend")
+			isInLevelEndBegin = false
 
 func _on_end_of_level_body_exited(body):
 	if body == $Player:
 		isInEndLevel = false
-		$"Player/Enigma label".queue_free()
+		if find_child("Player/Enigma label"):
+			$"Player/Enigma label".queue_free()
 		
 func _on_doorway_body_entered(body):
 	if body == $Player && successEnigma:

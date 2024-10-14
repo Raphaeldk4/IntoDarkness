@@ -515,7 +515,7 @@ layer_0/tile_data = PackedInt32Array(65536, 3, 2, 65537, 3, 2, 65538, 3, 2, 6553
 
 [node name="Player" parent="." instance=ExtResource("2_6o24a")]
 process_mode = 1
-position = Vector2(158, 91)
+position = Vector2(2112, -95)
 scale = Vector2(4, 4)
 
 [node name="mainCamera" type="Camera2D" parent="Player"]
@@ -615,6 +615,8 @@ collision_mask = 3
 
 [node name="digging" type="AudioStreamPlayer2D" parent="Items/Gates/GateTuto"]
 stream = ExtResource("10_dc6ow")
+volume_db = -70.0
+max_distance = 1500.0
 
 [node name="endOfLevel" parent="Items" instance=ExtResource("6_sjjkh")]
 position = Vector2(5895, 446)
